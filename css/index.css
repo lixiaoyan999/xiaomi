@@ -136,6 +136,10 @@ input {
 	text-align: center;
 	margin-left:120px;
 	float: left;
+	overflow: hidden;
+}
+.nav .navzi div{
+	float: left;
 }
 .nav .navzi a{
 	color: #333;
@@ -145,6 +149,55 @@ input {
 }
 .nav .navzi a:hover{
 	color: #ff6700;
+}
+.yiyi{
+	position: absolute;
+    top: 260px;
+    left: 0;
+    z-index: 24;
+    width: 100%;
+    height: 229px;
+    border-top: 1px solid #e0e0e0;
+    background: #fff;
+    display: none;
+    z-index: 200;
+}
+/* .nav .navzi div:hover .yiyi{
+	display: block;
+}
+ */.cn-active{
+	display: block;
+}
+.yiyi ul li:nth-child(1)::before,
+.yiyi ul li:nth-child(2)::before,
+.yiyi ul li:nth-child(3)::before,
+.yiyi ul li:nth-child(4)::before{
+	content: "";
+	position: absolute;
+	top: 42px;
+	left: 196px;
+	background-color: #ccc;
+	width: 2px;
+	height: 120px;
+}
+.nav .navzi div .yiyi ul{
+	width: 1226px;
+	height: 201px;
+	margin: 0 auto;
+}
+.nav .navzi div .yiyi li{
+	width: 180px;
+	height: 166px;
+	padding: 35px 12px 0 12px;
+	float: left;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+.nav .navzi div .yiyi li img{
+	width: 160px;
+	height: 120px;
+	margin: 0;
 }
 .nav .navright{
 	width: 265px;
@@ -185,13 +238,14 @@ input {
 }
 .banner .bleft{
 	width: 234px;
-	height: 420px;
+	height: auto;
 	background-color: #D93D41;
 	position: absolute;
 	top: 0px;
 	left: 0px;
 	padding:20px 0;
-	background: rgba(255, 0, 0, 0.6)
+	background: rgba(255, 0, 0, 0.6);
+	z-index: 10;
 }
 .banner .bleft .blzi1{
 	width: 204px;
@@ -205,10 +259,6 @@ input {
 	color:#fff ;
 	font-size:14px;  
 }
-.banner .bleft .blzi1:hover{
-	background-color: #FF6700;
-}
-
 .banner .bleft .blzi1 i{
 	width: 16px;
 	height: 16px;
@@ -216,54 +266,122 @@ input {
 	top: 0;
 	left: 200px; 
 }
-
-.banner .bright{
-	width: 1226px;
-	height: 460px;
-	overflow: hidden; 
+.banner .bleft .blzi1:hover{
+	background-color: #FF6700;
 }
-.banner .bright .brtu1{
+.banner .bleft .blh1{
+	width: 816px;
+	height: 458px;
+	border: 1px solid #e0e0e0;
+	border-left: 0;
+	padding-left: 20px;
+	box-sizing: border-box;
+	background-color: #fff;
+	position: absolute;
+	top: -20px;
+	left: 234px;
+	overflow: hidden;
+	display: none;
+	z-index: 999;
+} 
+/* .banner .bleft .blzi1:hover .blh1{
+	display: block;
+} */
+.banner .bleft .blzi1 .con-active{
+	display: block;
+}
+.banner .bleft .blh1 ul{
+	float: left;
+	width: 265px;
+	height: 458px;
+	margin: 0;
+	padding: 2px 0;
+	font-size: 14px;
+}
+.banner .bleft .blh1 ul li{
+	float: left;
+	width: 265px;
+	height: 76px;
+}
+.blh1 ul li img{
+	margin-right: 12px;
+	margin-top: 18px;
+	width: 40px;
+	height: 40px;
+	float: left;
+}
+.blh1 ul li span{
+	float: left;
+	color: #333;
+	line-height: 76px;
+}
+.blh1 ul li:hover span{
+	color: #FF6700;
+}
+.banner .bleft .blh2{
+	position: absolute;
+	top: -62px;
+	left: 234px;
+}
+.banner .bleft .blh3{
+	width: 992px;
+	box-sizing: border-box;
+	position: absolute;
+	top: -104px;
+	left: 234px;
+}
+.banner .bleft .blh3 ul{
+	width: 242px;
+	float: left;
+}
+.banner .bleft .blh4{
+	position: absolute;
+	top: -146px;
+	left: 234px;
+}
+.banner .bleft .blh5{
+	width: 551px;
+	position: absolute;
+	top: -188px;
+	left: 234px;
+}
+.banner .bleft .blh5 ul{
+	width: 265px;
+}
+.banner .bleft .blh6{
+	position: absolute;
+	top: -230px;
+	left: 234px;
+}
+.banner .bleft .blh7{
+	width: 265px;
+	position: absolute;
+	top: -272px;
+	left: 234px;
+}
+.banner .bleft .blh8{
+	position: absolute;
+	top: -314px;
+	left: 234px;
+}
+.banner .bleft .blh9{
+	position: absolute;
+	top: -356px;
+	left: 234px;
+}
+.banner .bleft .blh10{
+	position: absolute;
+	top: -398px;
+	left: 234px;
+}
+.banner .bright img{
 	width: 1226px;
 	height: 460px;
-	background-image: url('../img/bannerxiaomibijiben.png');
 	float: left;
-    }
-.banner .bright .brtu2{
-	width: 1226px;
-	height: 460px;
-	background-image: url('../img/bannerblue.jpg');
-	float: left;
-    }
-.banner .bright .brtu3{
-	width: 1226px;
-	height: 460px;
-	background-image: url('../img/bannerkongjingPRO.jpg');
-	float: left;
-    }
-.banner .bright .brtu4{
-	width: 1226px;
-	height: 460px;
-	background-image: url('../img/bannerred.jpg');
-	float: left;
-    }   
-.banner .bright .brtu5{
-	width: 1226px;
-	height: 460px;
-	background-image: url('../bannerwyf.jpg');
-	float: left;
-    }
-.banner .bright .brtu6{
-	width: 1226px;
-	height: 460px;
-	background-image: url('../bannerxiaomi6.jpg');
-	float: left;
-    }
-.banner .bright .brtu7{
-	width: 1226px;
-	height: 460px;
-	background-image: url('../bannerxiaomibijiben.png');
-	float: left;
-    }
+	position: absolute;
+	top: 0;
+	left: 0;
+}
  .banner .banleft{
 	width: 40px;
 	height:65px;
@@ -276,6 +394,7 @@ input {
 	top: 0px;
 	left: 234px;
 	cursor: pointer;
+	z-index: 1;
  }
   .banner .banleft:hover{
  	background-color: rgba(0, 0, 0, 0.05);
@@ -292,6 +411,7 @@ input {
 	top: 0;
 	right: 0;
 	cursor: pointer;
+	z-index: 1;
 }
  .banner .banright:hover{
  	background-color: rgba(0, 0, 0, 0.05);
@@ -303,7 +423,8 @@ input {
 	position: absolute;
 	top: 426px;
 	left: 1060px;
-	margin: 0 auto; 
+	margin: 0 auto;
+	z-index: 1;
 }
  .banner .yuan .yuan1{
 	width:5px;
@@ -321,9 +442,10 @@ input {
 /* banner下边的框 */
 .banbottom{
 	width: 1226px;
-	height: 168px;
+	height: auto;
 	margin: 0 auto;
 	margin-bottom: 43px;
+	overflow: hidden;
 }
 .banbottom .bottom1{
 	width: 228px;

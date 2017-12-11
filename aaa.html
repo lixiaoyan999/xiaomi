@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>banner</title>
+	<link rel="stylesheet" href="css/aaa.css">
+</head>
+<body>
+	<div class="banner">
+		 <div class="banleft"></div>
+         <div class="banright"></div>
+         <div class="yuan">
+          	 <div class="yuan1 yuan2"></div>
+          	 <div class="yuan1"></div>
+          	 <div class="yuan1"></div>
+          	 <div class="yuan1"></div>
+          	 <div class="yuan1"></div>
+          	 <div class="yuan1"></div>
+          	 <div class="yuan1"></div>
+     	 </div>
+     	 <ul class="bleft">
+     	 	 <li class="item">
+     	 	 		<a href=""><span>家电</span><i>></i></a>
+     	 	 		<div class="item1">
+     	 	 			111
+     	 	 		</div>
+     	 	 </li>
+     	 	 <li class="item">
+     	 	 		<a href=""><span>家电</span><i>></i></a>
+     	 	 		<div class="item1 item2">
+     	 	 			222
+     	 	 		</div>
+     	 	 </li>
+     	 	 <li class="item">
+     	 	 		<a href=""><span>家电</span><i>></i></a>
+     	 	 		<div class="item1 item3">
+     	 	 			333
+     	 	 		</div>
+     	 	 </li>
+     	 	 <li class="item">
+     	 	 		<a href=""><span>家电</span><i>></i></a>
+     	 	 		<div class="item1 item4">
+     	 	 			444
+     	 	 		</div>
+     	 	 </li>
+     	 	 <li class="item">
+     	 	 		<a href=""><span>家电</span><i>></i></a>
+     	 	 		<div class="item1 item5">
+     	 	 			555
+     	 	 		</div>
+     	 	 </li>
+     	 	 <li class="item">
+     	 	 		<a href=""><span>家电</span><i>></i></a>
+     	 	 		<div class="item1 item6">
+     	 	 			666
+     	 	 		</div>
+     	 	 </li>
+     	 	 <li class="item">
+     	 	 		<a href=""><span>家电</span><i>></i></a>
+     	 	 		<div class="item1 item7">
+     	 	 			777
+     	 	 		</div>
+     	 	 </li>
+     	 	 <li class="item">
+     	 	 		<a href=""><span>家电</span><i>></i></a>
+     	 	 		<div class="item1 item8">
+     	 	 			888
+     	 	 		</div>
+     	 	 </li>
+     	 	 <li class="item">
+     	 	 		<a href=""><span>家电</span><i>></i></a>
+     	 	 		<div class="item1 item9">
+     	 	 			999
+     	 	 		</div>
+     	 	 </li>
+     	 	 <li class="item">
+     	 	 		<a href=""><span>家电</span><i>></i></a>
+     	 	 		<div class="item1 item10">
+     	 	 			000
+     	 	 		</div>
+     	 	 </li>
+     	 </ul>
+		<div class="bright">
+			<div class="brtu1 brImg_active">
+				<a href=""><img src="img/bannertu1.jpg" alt=""></a>
+			</div>
+			<div class="brtu1">
+				<a href=""><img src="img/bannertu2.jpg" alt=""></a>
+			</div>
+			<div class="brtu1">
+				<a href=""><img src="img/bannertu3.jpg" alt=""></a>
+			</div>
+			<div class="brtu1">
+				<a href=""><img src="img/bannertu4.png" alt=""></a>
+			</div>
+			<div class="brtu1">
+				<a href=""><img src="img/bannertu5.jpg" alt=""></a>
+			</div>
+			<div class="brtu1">
+				<a href=""><img src="img/bannertu6.jpg" alt=""></a>
+			</div>
+			<div class="brtu1">
+				<a href=""><img src="img/bannertu7.jpg" alt=""></a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script src="animate.js"></script>
+<script>
+/* 轮播图 */
+/*	1.获取元素：
+		 * 图片 brtu1
+		 * 大盒子 bright 1
+		 * 轮播点 yuan1
+		 * 左右按钮  1 1
+	2.初始化：js
+		 * 除了第一张其余全部放置在最右侧： left：1226
+		 * 设置两个下标:  now  next
+		 	 就位：now(0,0)
+		 	 	   next(1226,0)
+		 	 now   代表当前   (0,0)  ->(1226,0) 
+		 	 next  代表下一个   (1226,0)  ->(0,0)
+			
+			 now   代表当前   (0,0)  ->(-1226,0) 
+		 	 next  代表下一个   (0,0)  ->(1226,0)
+		 	 更新 ：now
+	3.让图片自动播放
+		 * 开启时间函数  setInterval()           	*/
+	let tu = document.querySelectorAll('.brtu1');
+	let yuan = document.querySelectorAll('.yuan1');
+	let ban_box = document.getElementsByClassName('banner')[0];
+	let rBtn = document.querySelector('.banright');
+	let lBtn = document.querySelector('.banleft');
+	let now = 0;
+	let next = 0;
+	let t = setInterval(move,2000);
+	let flag = true;
+
+	for(let i = 1;i < tu.length;i++){
+		tu[i].style.left = 1226 + 'px';
+	}
+
+	function move(type){
+		type = type || 'right';
+		if(type == 'right'){
+			next++;
+			if(next == tu.length){
+				next = 0;
+			}
+
+			tu[next].style.left = 1226 + 'px';
+			tu[now].style.left = 0 + 'px';
+
+			animate(tu[now],{left:-1226},1500,function(){
+				flag = true;
+			});
+
+		}
+		if(type == 'left'){
+			next--;
+			if(next == -1){
+				next = tu.length - 1;
+			}
+
+			tu[next].style.left = -1226 + 'px';
+			tu[now].style.left = 0 + 'px';
+
+			animate(tu[now],{left:1226},1500,function(){
+				flag = true;
+			});
+			
+		}
+		animate(tu[next],{left:0},1500,function(){
+				flag = true;
+			});
+		yuan[now].style.backgroundColor = '#838383';
+		yuan[next].style.backgroundColor = '#fff';
+		now = next;
+	}
+	ban_box.onmouseover = function(){
+		clearInterval(t);
+	}
+	ban_box.onmouseout = function(){
+		 t = setInterval(move,2000);
+	}
+	rBtn.onclick = function(){
+		if(flag == true){
+			move('right');
+			flag = false;		
+		}
+		
+	}
+	lBtn.onclick = function(){
+		if(flag == true){
+			move('left');
+			flag = false;
+		}
+	}
+	for(let k = 0;k < yuan.length;k++){
+		yuan[k].aa = k;
+		yuan[k].onmouseover = function(){
+			if(this.aa > now){
+				next = this.aa - 1;
+				if(flag == true){
+					move('right');
+					flag = false;
+				}
+				
+			}else{
+				next = this.aa + 1;
+				if(flag == true){
+					move('left');
+					flag = false;
+				}	
+			}
+		}
+	}
+/* 侧导航 */
+/*	1.初始化：css
+		 * item1 : display none;
+	2.获取元素：
+		标题(ce_nav) : item
+		选项卡(ce_card): item1
+	3.遍历标题
+	4.标题添加onmouseover事件
+	5.ce_card :   display:none/block    */
+	let ce_nav = document.getElementsByClassName('item');
+	let ce_card =document.getElementsByClassName('item1');
+	for(let i = 0;i < ce_nav.length;i++){
+		ce_nav[i].onmouseover = function(){
+			for(let j = 0; j < ce_card.length;j++){
+				ce_card[j].classList.remove('active');
+			}
+			ce_card[i].classList.add('active');
+			ce_nav[i].onmouseout = function(){
+			for(let j = 0; j < ce_card.length;j++){
+				ce_card[j].classList.remove('active');
+			}
+		}
+		}
+	}
+
+</script>
